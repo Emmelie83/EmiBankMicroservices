@@ -87,6 +87,18 @@ services:
       file: common-config.yml
       service: microservice-eureka-config
 
+  loans1:
+    image: "emmeliej/loans:s8"
+    container_name: loans1-ms
+    ports:
+      - "8091:8090"
+    environment:
+      SPRING_APPLICATION_NAME: "loans"
+      SPRING_DATASOURCE_URL: jdbc:mysql://loansdb:3306/loansdb
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
+
   cards:
     image: "emmeliej/cards:s8"
     container_name: cards-ms
